@@ -40,26 +40,63 @@ function sendText(text) {
 
 
 
+function send_msg_to_line(text){
 
-$(function () {
-    // QRコードスキャンボタンのクリックイベント
-    $('#qr-scan-button').click(function () {
-        liff.scanCode()  // QRコードをスキャン
-            .then(function (result) {
-                // スキャン結果を取得
-                var scannedData = result.value;
+        // var date = $('input[name="date"]').val();
+        // var tool = $('input[name="tool"]').val();
+        
+  //var breed = obj.filter(function(input) {
+  //return input.name.match(/breed/);});
 
-                // スキャン結果をトークに送信
-                sendText(scannedData);
-            })
-            .catch(function (error) {
-                console.error('QRコードスキャンエラー:', error);
-            });
+    let msg={};
+
+       msg = ["code：" + text] ;　 //トークに送信する内容
+      
+        sendText(String(msg)); 
+      
+        return false;
+
+}
+
+
+
+
+
+
+
+
+
+document.getElementById('scan-qr-button').addEventListener('click', () => {
+  liff.scanCode()
+    .then(result => {
+      const scannedCode = result.value;
+
+send_msg_to_line(scannedCode)
+
+    
+    })
+    .catch(error => {
+      console.error('QRコードスキャンエラー:', error);
     });
+});　　　　
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+$('#qr-button').click(function() {
+	// LIFF の QR コード読み取り機能呼び出し
+
+
+    
+}); 
 
