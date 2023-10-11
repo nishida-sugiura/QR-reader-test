@@ -23,7 +23,7 @@
 
 <section>
 
-<h2>コード入力画面</h2>
+<h2>コード入力画面1</h2>
 <!--<h1 class="tp"><img src="top_deposit.jpg"></h1><h1 class="tp"><img src="top_htu.jpg"></h1>--->
 
 
@@ -32,21 +32,8 @@
 <!--<h1 class="m1">抽選方法、注意事項<a href="htu.html">こちら</a>から。</h1>--->
 <form>
 
-	
-<h1><br></h1>	
-	
-<h1 class="m">　５桁の数字を入力してから　<br>確定ボタンを押してください</h1>
 
-<h1 class="m1">※コードは代金をお支払い後に入力してください。</h1>
-<h1 class="m1">※結果はLineのトーク画面に出力されます。</h1>
-	
-  <h1 class="ss"><input type="number" name="serialcode" min="10000" max="999999" oninput="javascript: this.value = this.value.slice(0, 5);" style="width:7em;" style=”ime-mode:disabled;" class="code" placeholder=" コードを入力" required></h1>
-
-
-
-<h5><div><input type="submit" value="確定する" class="button" ></div></h5>
-
-
+<button id="qr-button">QRコード読み取り</button>
 
 	
 </form>
