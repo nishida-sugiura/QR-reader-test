@@ -39,24 +39,6 @@ function sendText(text) {
 
 
 
-
-
-$(function () {
-    // QRコードスキャンボタンのクリックイベント
-    $('#qr-scan-button').click(function () {
-        liff.scanCode()  // QRコードをスキャン
-            .then(function (result) {
-                // スキャン結果を取得
-                var scannedData = result.value;
-
-                // スキャン結果をトークに送信
-                sendTextToLine(scannedData);
-            })
-            .catch(function (error) {
-                console.error('QRコードスキャンエラー:', error);
-            });
-    });
-
     // LINEトークにテキストメッセージを送信する関数
     function sendTextToLine(text) {
         liff.sendMessages([
@@ -74,6 +56,30 @@ $(function () {
     }
 });
 
+
+
+
+
+
+
+
+
+
+$(function () {
+    // QRコードスキャンボタンのクリックイベント
+    $('#qr-scan-button').click(function () {
+        liff.scanCode()  // QRコードをスキャン
+            .then(function (result) {
+                // スキャン結果を取得
+                var scannedData = result.value;
+
+                // スキャン結果をトークに送信
+                sendTextToLine(scannedData);
+            })
+            .catch(function (error) {
+                console.error('QRコードスキャンエラー:', error);
+            });
+    });
 
 
 
