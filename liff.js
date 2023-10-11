@@ -89,14 +89,3 @@ send_msg_to_line(scannedCode)
 
 
 
-
-
-
-
-$('#qr-button').click(function() {
-	// LIFF の QR コード読み取り機能呼び出し
-
-
-    
-}); 
-
