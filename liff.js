@@ -36,15 +36,48 @@ function sendText(text) {
 }
 
 
-$('#qr-button').click(function() {
-	// LIFF の QR コード読み取り機能呼び出し
-	liff.scanCode().then(function(result) {
-		$.post(result.value, { userId: userId }, function(data) {
-			alert(data.addPoint + ' ポイントを獲得しました！');
-			$('#point').text(data.currentPoint + data.addPoint + ' ポイント');
-		}).catch(function(err) {
-			console.log(err);
-		});
-	});
+
+
+
+
+
+$(function () {
+    // QRコードスキャンボタンのクリックイベント
+    $('#qr-scan-button').click(function () {
+        liff.scanCode()  // QRコードをスキャン
+            .then(function (result) {
+                // スキャン結果を取得
+                var scannedData = result.value;
+
+                // スキャン結果をトークに送信
+                sendTextToLine(scannedData);
+            })
+            .catch(function (error) {
+                console.error('QRコードスキャンエラー:', error);
+            });
+    });
+
+    // LINEトークにテキストメッセージを送信する関数
+    function sendTextToLine(text) {
+        liff.sendMessages([
+            {
+                'type': 'text',
+                'text': text
+            }
+        ])
+        .then(function () {
+            console.log('メッセージを送信しました');
+        })
+        .catch(function (error) {
+            console.error('メッセージの送信エラー:', error);
+        });
+    }
 });
+
+
+
+
+
+
+
 
