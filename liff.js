@@ -39,30 +39,6 @@ function sendText(text) {
 
 
 
-    // LINEトークにテキストメッセージを送信する関数
-    function sendTextToLine(text) {
-        liff.sendMessages([
-            {
-                'type': 'text',
-                'text': text
-            }
-        ])
-        .then(function () {
-            console.log('メッセージを送信しました');
-        })
-        .catch(function (error) {
-            console.error('メッセージの送信エラー:', error);
-        });
-    }
-});
-
-
-
-
-
-
-
-
 
 
 $(function () {
@@ -74,7 +50,7 @@ $(function () {
                 var scannedData = result.value;
 
                 // スキャン結果をトークに送信
-                sendTextToLine(scannedData);
+                sendText(scannedData);
             })
             .catch(function (error) {
                 console.error('QRコードスキャンエラー:', error);
