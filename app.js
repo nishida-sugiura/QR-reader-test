@@ -25,8 +25,13 @@ function initializeApp() {
                         }
                     ])
                         .then(() => {
-                            alert("QRコードのデータを送信しました");
+                            alert("QRコードのデータを送信しました");  
+
+                                    liff.closeWindow();
                         })
+
+
+                        
                         .catch(err => {
                             console.error(err);
                         });
