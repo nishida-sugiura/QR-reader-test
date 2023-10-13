@@ -66,22 +66,6 @@ function send_msg_to_line(text){
 
 
 
-document.getElementById('scan-qr-button').addEventListener('click', () => {
-  liff.scanCode()
-    .then(result => {
-      const scannedCode = result.value;
-
-send_msg_to_line(scannedCode)
-
-    
-    })
-    .catch(error => {
-      console.error('QRコードスキャンエラー:', error);
-    });
-});　　　　
-
-
-
 
 
 
