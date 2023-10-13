@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function initializeApp() {
     // スキャンボタンのクリックハンドラ
-    document.getElementById("scanButton").addEventListener("click", function () {
+
+     document.getElementById("customButton").addEventListener("click", function () {
         liff.scanCode()
             .then(result => {
                 // QRコードのスキャンが成功した場合
