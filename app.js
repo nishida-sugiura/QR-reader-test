@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // LIFFの初期化
     liff.init({
-        liffId: "YOUR_LIFF_ID" // 自分のLIFF IDに置き換えてください
+        liffId: "2001059289-X2m74PYZ" // 自分のLIFF IDに置き換えてください
     }).then(() => {
         // LIFFの初期化が成功したら
         initializeApp();
