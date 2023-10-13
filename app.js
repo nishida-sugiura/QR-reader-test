@@ -25,12 +25,8 @@ function initializeApp() {
                         }
                     ])
                         .then(() => {
-                            alert("QRコードのデータを送信しました");  
-
+                            alert("QRコードのデータを送信しました");
                         })
-
-
-                        
                         .catch(err => {
                             console.error(err);
                         });
@@ -41,3 +37,4 @@ function initializeApp() {
             });
     });
 }
+            
