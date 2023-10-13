@@ -27,7 +27,6 @@ function initializeApp() {
                         .then(() => {
                             alert("QRコードのデータを送信しました");  
 
-                                    liff.closeWindow();
                         })
 
 
