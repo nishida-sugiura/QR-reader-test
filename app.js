@@ -26,8 +26,7 @@ function initializeApp() {
                         }
                     ])
                         .then(() => {
-                            alert("QRコードのデータを送信しました");
-                            liff.closeWindow(); // LIFFウィンドウを閉じる
+                         liff.closeWindow(); // LIFFウィンドウを閉じる
                         })
                         .catch(err => {
                             console.error(err);
