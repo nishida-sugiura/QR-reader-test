@@ -1,3 +1,21 @@
+function sendText(msg) {
+    // sendMessages(text);
+// }
+
+// LINEトーク画面上でメッセージ送信
+// function sendMessages(text) {
+    liff.sendMessages([{
+        'type': 'text',
+        'text': msg
+    }]).then(function () {  
+        liff.closeWindow();
+        
+    }).catch(function (error) {
+        window.alert('Failed to send message ' + error);
+    });
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // LIFFの初期化
     liff.init({
@@ -19,18 +37,13 @@ function initializeApp() {
                 // QRコードのスキャンが成功した場合
                 if (result.value) {
                     // スキャン結果をトーク画面に送信
-                    liff.sendMessages([
-                        {
-                            type: "text",
-                            text: result.value
-                        }
-                    ])
-                        .then(() => {
-                         liff.closeWindow(); // LIFFウィンドウを閉じる
-                        })
-                        .catch(err => {
-                            console.error(err);
-                        });
+
+    let qr_data = result.value;
+   
+       //msg1="◎正常に処理されました。\n=======================\n今回獲得ポイント：【"+tt_pt+"pt】\n合計ポイント：【"+pre_point+"→"+ box_pt +"pt】
+                    
+               sendText(String(qr_data))
+                    
                 }
             })
             .catch(err => {
