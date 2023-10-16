@@ -41,8 +41,10 @@ function initializeApp() {
     let qr_data = result.value;
    
        //msg1="◎正常に処理されました。\n=======================\n今回獲得ポイント：【"+tt_pt+"pt】\n合計ポイント：【"+pre_point+"→"+ box_pt +"pt】
+
+let aaa = ["qr_data:"+qr_data]
                     
-               sendText(String(qr_data))
+               sendText(String(aaa))
                     
                 }
             })
